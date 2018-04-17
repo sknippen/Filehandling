@@ -437,7 +437,7 @@ from sys import argv
 print(argv)
 ```
 
-The output of `python program_test.py` is then
+The output of `python program_test.py a b` is
 
 ```
 ['program_test.py', 'a', 'b']
