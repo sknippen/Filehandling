@@ -96,9 +96,9 @@ As long as the program didn't reach the end of the file (so, as long as the numb
 Within this loop, the first five characters of the line are examined.
 
 ```
->>>     if line[:5] == "aster":
+...     if line[:5] == "aster":
 ...           outas.write(line[7:12]+"\n")
->>>     if line[:5] == "obeli":
+...     if line[:5] == "obeli":
 ...           outob.write(line[7:12]+"\n")
 
 ```
@@ -140,7 +140,7 @@ Remark: In `python2`, `raw_input()` delivers a string, while `input()` considers
 Imagine now that Miraculix gives a name of a file which does not exist. The program breaks. Therefore, a test can be built in.
 
 <!--
-file=raw_input("Which inputfile? ")
+file_in=input("Which inputfile? ")
 inp= open(file_in+".knx",'r')
 
 Errormessage:
@@ -167,6 +167,10 @@ Which inputfile? somethingelse
 File cannot be opened: somethingelse.knx
 
 ```
+
+---
+
+## Exceptions
 
 <!--
 class B(Exception):
@@ -212,6 +216,16 @@ A fast look upon other errors:
 ...    print("use a variable before it is created")
 >>> except:
 ...    print("I have no idea which error")
+
+```
+
+The syntax for combination is then
+
+```
+>>> try:
+...    <I would like to try to do something>
+>>> except (IOError,NameError):
+...    print("Something that states that it is one of these")
 
 ```
 
